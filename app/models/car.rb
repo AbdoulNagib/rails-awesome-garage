@@ -3,5 +3,6 @@ class Car < ApplicationRecord
   has_many :reviews
   has_many :favourites, dependent: :destroy
 
-  validates :brand, :model, :year, :fuel, presence: true
+  validates :brand, :model, :fuel, presence: true
+  validates :year, presence: true, numericality: { only_integer: true }
 end
